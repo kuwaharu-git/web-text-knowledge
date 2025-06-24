@@ -1,0 +1,62 @@
+{
+  "scraping": {
+    "user_agent": "Mozilla/5.0 (compatible; DifyKnowledgeBot/1.0)",
+    "timeout": 30,
+    "retry_count": 3,
+    "exclude_patterns": [
+      "/admin/",
+      "/login/",
+      "/wp-admin/",
+      "/api/",
+      "*.pdf",
+      "*.jpg",
+      "*.jpeg",
+      "*.png",
+      "*.gif",
+      "*.svg",
+      "*.css",
+      "*.js",
+      "*.ico"
+    ],
+    "respect_robots_txt": true,
+    "max_redirects": 5
+  },
+  "parsing": {
+    "remove_elements": [
+      "nav",
+      "footer",
+      "aside", 
+      "header",
+      ".advertisement",
+      ".ads",
+      ".sidebar",
+      ".menu",
+      ".navigation",
+      ".breadcrumb",
+      ".social-share",
+      ".comment",
+      ".comments",
+      "script",
+      "style",
+      "noscript"
+    ],
+    "min_text_length": 100,
+    "language": "ja",
+    "clean_whitespace": true,
+    "extract_metadata": true
+  },
+  "output": {
+    "filename_template": "{site_name}_{timestamp}",
+    "split_large_files": true,
+    "include_metadata": true,
+    "encoding": "utf-8",
+    "add_table_of_contents": true
+  },
+  "dify": {
+    "max_file_size_mb": 15,
+    "max_chunk_size": 2000,
+    "overlap_size": 200,
+    "enable_chunking": true,
+    "optimize_for_search": true
+  }
+}
